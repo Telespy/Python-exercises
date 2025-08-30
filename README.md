@@ -1,2 +1,2 @@
-# Python-exercises
-Exercícios de python, do mais básico até algo avançado.
+# Projetos de Python
+Diversos projeto em Python para registrar evolução.
