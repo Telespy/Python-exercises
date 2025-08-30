@@ -1,2 +1,2 @@
 # Projetos de Python
-Diversos projeto em Python para registrar evolução.
+Diversos projetos em Python para registrar evolução.
