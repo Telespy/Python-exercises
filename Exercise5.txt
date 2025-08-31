@@ -1,1 +1,0 @@
-Jogo de baralho BlackJack em python.
