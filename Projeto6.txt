@@ -1,0 +1,5 @@
+Tentativa de criação do jogo Stop
+
+Ainda precisa das seguintes melhorias:
+- alguma forma para mesclar esse código a um sistema de IA e fazer com que a IA reconheça se o termo utilizado pelo jogador é uma palavra válida.
+- um banco de dados de temas prédefinidos para utilizar diferentes tipos de estilos de palavras.
