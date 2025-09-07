@@ -27,11 +27,11 @@ def info_movie(nome_filme, apikey):
             return None
     # verifica se houve algum problema ao requisitar o link
     except exceptions.RequestException as e:
-        print(f"Erro ao fazer a requisição HTTP: {e}")
-        print("\nHouve um provável erro em sua API key, tente outra.")
+        print(f"Error making HTTP request: {e}")
+        print("\nThere was likely an error in your API key. Please try another one.")
         return None
     except json.JSONDecodeError:
-        print("Erro ao decodificar a resposta JSON.")
+        print("Error decoding JSON response.")
         return None
 
 
@@ -51,16 +51,16 @@ if __name__ == "__main__":
         tempo = movie.get("Runtime")
 
         if movie.get("Type")=="movie":
-            print(f"--- Informações sobre o filme {nome_filme} ---")
+            print(f"--- Information about the film {nome_filme.title()} ---")
         elif movie.get("Type")=="series":
-            print(f"--- Informações sobre a série {nome_filme} ---")
+            print(f"--- Information about the film {nome_filme.title()} ---")
         if genero:
             if movie.get("Type") == "movie":
-                print(f"Gênero do filme > {genero}")
+                print(f"Movie genre > {genero}")
             elif movie.get("Type") == "series":
-                print(f"Gênero da série > {genero}")
+                print(f"Movie genre > {genero}")
 
         if ano:
-            print(f"Ano de lançamento > {ano}")
+            print(f"Year of release > {ano}")
         if tempo:
-            print(f"Tempo de duração > {tempo}")
+            print(f"Duration > {tempo}")
