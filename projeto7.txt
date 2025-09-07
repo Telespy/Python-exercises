@@ -1,0 +1,1 @@
+API para encontrar informações pré selecionadas de filmes (apenas reconhece nomes de filmes em inglês)
