@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consulta de Filmes e Séries</title>
+</head>
+<body>
+    <h1>Buscar informações de filmes</h1>
+    <form method="post">
+        <input type="text" name="nome_filme" placeholder="Nome do filme" required>
+        <input type="text" name="apikey" placeholder="Sua API Key" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if movie and movie.Title %}
+        <h2>Informações do filme: {{ movie.Title }}</h2>
+        <p>Gênero: {{ movie.Genre }}</p>
+        <p>Ano: {{ movie.Year }}</p>
+        <p>Duração: {{ movie.Runtime }}</p>
+        <p>Bilheteria: {{ movie.BoxOffice }}</p>
+        <img src={{ movie.Poster }} alt="Poster-do-filme">
+    {% elif movie is not none %}
+        <p>Filme não encontrado.</p>
+    {% endif %}
+    <style>
+        :root{
+  --bg:#f4f7fb;
+  --card:#fff;
+  --accent:#2b6cb0;
+  --muted:#6b7280;
+  --danger:#e53e3e;
+}
+*{text-align:center;box-sizing:border-box;font-family:Inter,Segoe UI,Arial,sans-serif}
+body{margin:0;background:var(--bg);color:#111}
+.container{max-width:900px;margin:36px auto;padding:20px}
+h1{margin:0 0 16px;color:var(--accent)}
+.search-form{display:flex;gap:8px;margin-bottom:16px}
+.search-form input[type="text"]{flex:1;padding:10px;border:1px solid #d1d5db;border-radius:6px}
+.search-form button{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:6px;cursor:pointer}
+.search-form button:hover{opacity:.95}
+.movie-card{display:flex;gap:16px;background:var(--card);padding:16px;border-radius:10px;box-shadow:0 4px 12px rgba(16,24,40,.06)}
+.poster{width:160px;height:auto;border-radius:6px;object-fit:cover}
+.details h2{margin:0 0 8px;font-size:20px}
+.details p{margin:6px 0;color:var(--muted)}
+.alert{background:#fff3cd;padding:10px;border-radius:6px;border:1px solid #ffeeba;color:#664d03}
+.alert.error{background:#ffe6e6;border-color:var(--danger);color:var(--danger)}
+.small{display:block;margin-top:14px;color:var(--muted);font-size:13px}
+@media(max-width:640px){.search-form{flex-direction:column}.movie-card{flex-direction:column}.poster{width:100%;max-height:420px}}
+    </style>
+</body>
+</html>
